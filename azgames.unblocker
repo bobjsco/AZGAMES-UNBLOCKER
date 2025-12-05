@@ -1,0 +1,46 @@
+// === Floating AZGames.io window ===
+(function() {
+  // Prevent duplicates
+  if (document.getElementById('azgames-io-frame')) return;
+
+  // Create iframe container
+  const iframe = document.createElement('iframe');
+  iframe.src = 'https://azgames.io';
+  iframe.id = 'azgames-io-frame';
+  iframe.style.position = 'fixed';
+  iframe.style.bottom = '10px';
+  iframe.style.left = '10px';
+  iframe.style.width = '400px';
+  iframe.style.height = '300px';
+  iframe.style.border = '2px solid #000';
+  iframe.style.borderRadius = '8px';
+  iframe.style.zIndex = '999999';
+  iframe.style.background = '#fff';
+  iframe.style.boxShadow = '0 0 10px rgba(0,0,0,0.3)';
+
+  // Add close button
+  const closeBtn = document.createElement('button');
+  closeBtn.textContent = '×';
+  closeBtn.style.position = 'absolute';
+  closeBtn.style.top = '0';
+  closeBtn.style.right = '0';
+  closeBtn.style.zIndex = '1000000';
+  closeBtn.style.background = 'rgba(0,0,0,0.7)';
+  closeBtn.style.color = '#fff';
+  closeBtn.style.border = 'none';
+  closeBtn.style.borderRadius = '0 8px 0 8px';
+  closeBtn.style.cursor = 'pointer';
+  closeBtn.style.fontSize = '16px';
+  closeBtn.onclick = () => container.remove();
+
+  // Wrap iframe and button in a container
+  const container = document.createElement('div');
+  container.style.position = 'fixed';
+  container.style.bottom = '10px';
+  container.style.left = '10px';
+  container.style.zIndex = '999999';
+  container.appendChild(iframe);
+  container.appendChild(closeBtn);
+
+  document.body.appendChild(container);
+})();

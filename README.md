@@ -1,2 +1,2 @@
 # AZGAMES-UNBLOCKER
-unblocks azgames
+PASTE ONTO AN about:blank PAGE

@@ -1,0 +1,2 @@
+# AZGAMES-UNBLOCKER
+unblocks azgames
